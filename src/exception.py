@@ -6,7 +6,7 @@ error_detail.exc_info()  -> it returns 3 values. first & two not nessary.
 '''
 
 import sys 
-import logging
+# from src.logger import logging
 
 # function for error message
 def error_message_detail(error,error_detail:sys):
@@ -39,6 +39,8 @@ class CustomException(Exception):
     
 
 ####code to check the exceptions 
+# from src.logger import logging
+
 
 # if __name__ == "__main__":
 
@@ -47,8 +49,7 @@ class CustomException(Exception):
         
 #     except Exception as e:
 #         logging.info("Zero Division Error")
-#         raise  CustomException(e,"zero Division Error")
+#         raise  CustomException(e,sys)
 
 ## to run this check file "python src/exception.py"
 
-## this not working
