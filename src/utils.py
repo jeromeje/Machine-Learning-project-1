@@ -15,6 +15,7 @@ from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
 
+
 # 2. Define the function to save the object in the file. input params path and information to be saved as pickle file.
 def save_object(file_path, obj):
     try:
