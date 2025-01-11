@@ -11,8 +11,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
-# from src.components.model_trainer import ModelTrainerConfig
-# from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
 
 # any input is required is give to this path for the data ingestion
 # @dataclass is the decorator which is used to define the dataclass
@@ -89,8 +89,9 @@ if __name__=="__main__":
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
     # output is pickle file.  and store in the artifact folder.
 
-    # modeltrainer=ModelTrainer()
-    # print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    # call the model_trainer.py file and store the return value in the modeltrainer
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
 
 

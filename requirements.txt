@@ -7,5 +7,6 @@ catboost
 xgboost
 ipykernel
 dill
+Flask
 #pickle5
 #-e .
