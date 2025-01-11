@@ -8,8 +8,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
-# from src.components.data_transformation import DataTransformation
-# from src.components.data_transformation import DataTransformationConfig
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 # from src.components.model_trainer import ModelTrainerConfig
 # from src.components.model_trainer import ModelTrainer
@@ -72,6 +72,9 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
         
+        
+        
+               
 #  this is the main method.  when the file is run directly.  this block is executed.
 # to excute the code.  python src/components/data_ingestion.py        
 if __name__=="__main__":
@@ -80,9 +83,11 @@ if __name__=="__main__":
     # used to store the method return value in the train_data and test_data
     train_data,test_data=obj.initiate_data_ingestion()
 
-
-    # data_transformation=DataTransformation()
-    # train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+    # it could call the function in the data_transformation.py file.  and store the return value in the train_arr and test_arr
+    # class function is called by the object.  obj.function_name()
+    data_transformation=DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+    # output is pickle file.  and store in the artifact folder.
 
     # modeltrainer=ModelTrainer()
     # print(modeltrainer.initiate_model_trainer(train_arr,test_arr))

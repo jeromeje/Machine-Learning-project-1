@@ -6,4 +6,6 @@ scikit-learn
 catboost
 xgboost
 ipykernel
--e .
+dill
+#pickle5
+#-e .
